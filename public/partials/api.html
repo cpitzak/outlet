@@ -38,22 +38,22 @@ info: {
 GET /api/outlets
 
 # retrieve outlet info
-GET /api/outlet/1
+GET /api/outlet/:id
 
 # retrieve outlet name
-GET /api/outlet/1/name
+GET /api/outlet/:id/name
 
 # turn on outlet for :mins then shut off
-PUT /api/outlet/1/on/:mins
+PUT /api/outlet/:id/on/:mins
 
 # turn off outlet in :mins
-PUT /api/outlet/1/off/:mins
+PUT /api/outlet/:id/off/:mins
 
 # turn on outlet at :time
-PUT /api/outlet/1/on/at/:time
+PUT /api/outlet/:id/on/at/:time
 
 # turn off outlet at :time
-/api/outlet/1/off/at/:time
+/api/outlet/:id/off/at/:time
           </pre>
         </div>
 
