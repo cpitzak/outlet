@@ -1,0 +1,63 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-12">
+            <h1 class="page-header">API
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Home</a>
+                </li>
+                <li class="active">API</li>
+            </ol>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+          <pre>
+info: {
+    name: '',
+    id: '',
+    on: {
+      mins: '',
+      time: ''
+    },
+    off: {
+      mins: '',
+      time: ''
+    }
+}
+
+# after time or mins runs then clear them.
+
+
+# retrieve outlets info
+GET /api/outlets
+
+# retrieve outlet info
+GET /api/outlet/1
+
+# retrieve outlet name
+GET /api/outlet/1/name
+
+# turn on outlet for :mins then shut off
+PUT /api/outlet/1/on/:mins
+
+# turn off outlet in :mins
+PUT /api/outlet/1/off/:mins
+
+# turn on outlet at :time
+PUT /api/outlet/1/on/at/:time
+
+# turn off outlet at :time
+/api/outlet/1/off/at/:time
+          </pre>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
