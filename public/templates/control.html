@@ -1,3 +1,7 @@
+<div ng-controller="schedulerController">
+<br>
+<pre> id: {{id}}</pre>
+<input type="text" ng-model="name" class="form-control">
 <br>
 <div ng-controller="onOffController">
   <div class="btn-group">
@@ -8,7 +12,7 @@
 <hr>
 <div ng-controller="timerController">
 </div>
-<div ng-controller="schedulerController">
+<div>
   <div class="btn-group">
     <label class="btn btn-default" ng-model="checkModel.sun" uib-btn-checkbox>Su</label>
     <label class="btn btn-default" ng-model="checkModel.mon" uib-btn-checkbox>M</label>
@@ -53,4 +57,5 @@
       </div>
     </uib-accordion-group>
   </uib-accordion>
+</div>
 </div>

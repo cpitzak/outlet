@@ -9,6 +9,7 @@ app.controller('schedulerController', function ($scope, $log) {
   $scope.showScheduleSuccess = false;
   $scope.errorMsg = null;
   $scope.schedules = [];
+  $scope.name = 'Enter name here';
 
   $scope.checkModel = {
     sun: false,
