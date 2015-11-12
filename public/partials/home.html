@@ -25,7 +25,37 @@
             <div class="btn-toolbar">
               <button type="button" class="btn btn-default" ng-click="toggleOnOff()">{{scheduleOn ? 'ON' : 'OFF'}}</button>
               <button type="button" class="btn btn-primary" ng-click="add()">ADD</button>
+              <div ng-show="errorMsg !== null">
+                <br>
+                <uib-alert type="danger">Error: {{errorMsg}}</uib-alert>
+              </div>
+              <div ng-if="showScheduleSuccess">
+                <br>
+                <uib-alert type="success" dismiss-on-timeout="3000" close="closeSuccess()">Added to schedule</uib-alert>
+              </div>
             </div>
+            <br>
+            <uib-accordion close-others=true>
+              <uib-accordion-group heading="Schedule">
+                <div ng-show="schedules.length === 0">Nothing scheduled</div>
+                <div ng-if="schedules.length !== 0">
+                  <div class="row">
+                    <div class="col-sm-5" style="background-color:lavender;">Days</div>
+                    <div class="col-sm-3" style="background-color:lavenderblush;">Time</div>
+                    <div class="col-sm-2" style="background-color:lavender;">Action</div>
+                    <div class="col-sm-2" style="background-color:lavender;">Delete</div>
+                  </div>
+                </div>
+                <div ng-repeat="schedule in schedules">
+                  <div class="row">
+                    <div class="col-sm-5">{{getDayString(schedule.checkModel)}}</div>
+                    <div class="col-sm-3">{{formatAMPM(schedule.date)}}</div>
+                    <div class="col-sm-2 text-center">{{schedule.on ? 'ON' : 'OFF'}}</div>
+                    <div class="col-sm-2 btn-link text-center" ng-click="remove($index)">x</div>
+                  </div>
+                </div>
+              </uib-accordion-group>
+            </uib-accordion>
           </div>
         </div>
     </div>
