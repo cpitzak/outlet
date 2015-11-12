@@ -1,63 +1,14 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-4">
-          <div ng-controller="onOffController">
-            <div class="btn-group">
-              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'on'">ON</label>
-              <label class="btn btn-primary" ng-model="radioModel" uib-btn-radio="'off'">OFF</label>
-            </div>
-          </div>
-          <hr>
-          <div ng-controller="timerController">
-          </div>
-          <div ng-controller="schedulerController">
-            <div class="btn-group">
-              <label class="btn btn-default" ng-model="checkModel.sun" uib-btn-checkbox>Su</label>
-              <label class="btn btn-default" ng-model="checkModel.mon" uib-btn-checkbox>M</label>
-              <label class="btn btn-default" ng-model="checkModel.tues" uib-btn-checkbox>T</label>
-              <label class="btn btn-default" ng-model="checkModel.wed" uib-btn-checkbox>W</label>
-              <label class="btn btn-default" ng-model="checkModel.thurs" uib-btn-checkbox>Th</label>
-              <label class="btn btn-default" ng-model="checkModel.fri" uib-btn-checkbox>F</label>
-              <label class="btn btn-default" ng-model="checkModel.sat" uib-btn-checkbox>S</label>
-            </div>
-            <uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian=true></uib-timepicker>
-            <div class="btn-toolbar">
-              <button type="button" class="btn btn-default" ng-click="toggleOnOff()">{{scheduleOn ? 'ON' : 'OFF'}}</button>
-              <button type="button" class="btn btn-primary" ng-click="add()">ADD</button>
-              <div ng-show="errorMsg !== null">
-                <br>
-                <uib-alert type="danger">Error: {{errorMsg}}</uib-alert>
-              </div>
-              <div ng-if="showScheduleSuccess">
-                <br>
-                <uib-alert type="success" dismiss-on-timeout="3000" close="closeSuccess()">Added to schedule</uib-alert>
-              </div>
-            </div>
-            <br>
-            <uib-accordion close-others=true>
-              <uib-accordion-group heading="Schedule">
-                <div ng-show="schedules.length === 0">Nothing scheduled</div>
-                <div ng-if="schedules.length !== 0">
-                  <div class="row">
-                    <div class="col-sm-5" style="background-color:lavender;">Days</div>
-                    <div class="col-sm-3" style="background-color:lavenderblush;">Time</div>
-                    <div class="col-sm-2" style="background-color:lavender;">Action</div>
-                    <div class="col-sm-2" style="background-color:lavender;">Delete</div>
-                  </div>
-                </div>
-                <div ng-repeat="schedule in schedules">
-                  <div class="row">
-                    <div class="col-sm-5">{{getDayString(schedule.checkModel)}}</div>
-                    <div class="col-sm-3">{{formatAMPM(schedule.date)}}</div>
-                    <div class="col-sm-2 text-center">{{schedule.on ? 'ON' : 'OFF'}}</div>
-                    <div class="col-sm-2 btn-link text-center" ng-click="remove($index)">x</div>
-                  </div>
-                </div>
-              </uib-accordion-group>
-            </uib-accordion>
-          </div>
-        </div>
+      <div class="col-md-4" ng-include='"../templates/control.html"'></div>
+      <div class="col-md-4" ng-include='"../templates/control.html"'></div>
+      <div class="col-md-4" ng-include='"../templates/control.html"'></div>
+    </div>
+    <div class="row">
+      <hr>
+      <div class="col-md-4" ng-include='"../templates/control.html"'></div>
+      <div class="col-md-4" ng-include='"../templates/control.html"'></div>
     </div>
 
 </div>
