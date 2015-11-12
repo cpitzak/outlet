@@ -1,0 +1,26 @@
+{
+  "name": "outlet",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cpitzak/outlet",
+  "authors": [
+    "Clint Pitzak <cpitzak@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angularjs": "1.4.7",
+    "angular-route": "1.4.7",
+    "angular-animate": "1.4.7",
+    "angular-bootstrap": "0.14.3",
+    "bootstrap": "3.2.0",
+    "fontawesome": "4.1.0"
+  }
+}
