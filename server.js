@@ -19,6 +19,8 @@ var express = require('express'),
     logger = winston.loggers.get('standard');
 
     app.get('/api/outlet/:id', outlets.outletInfo);
+    app.get('/api/outlet/:id/schedule', outlets.scheduleInfo);
+    app.post('/api/outlet/:id/schedule/:cronstring', outlets.schedule);
 
     app.use(express.compress());
     app.use('/', express.static(publicDir));

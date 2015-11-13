@@ -43,6 +43,9 @@ GET /api/outlet/:id
 # retrieve outlet name
 GET /api/outlet/:id/name
 
+# set a schedule
+POST /api/outlet/:id/schedule/:cronstring
+
 # turn on outlet for :mins then shut off
 PUT /api/outlet/:id/on/:mins
 
