@@ -41,18 +41,18 @@
       <div ng-show="schedules.length === 0">Nothing scheduled</div>
       <div ng-if="schedules.length !== 0">
         <div class="row">
-          <div class="col-sm-5" style="background-color:lavender;">Days</div>
-          <div class="col-sm-3" style="background-color:lavenderblush;">Time</div>
-          <div class="col-sm-2" style="background-color:lavender;">Action</div>
-          <div class="col-sm-2" style="background-color:lavender;">Delete</div>
+          <div class="col-xs-5" style="background-color:lavender;">Days</div>
+          <div class="col-xs-3" style="background-color:lavenderblush;">Time</div>
+          <div class="col-xs-2" style="background-color:lavender;">Action</div>
+          <div class="col-xs-2" style="background-color:lavender;">Delete</div>
         </div>
       </div>
       <div ng-repeat="schedule in schedules">
         <div class="row">
-          <div class="col-sm-5">{{getDayString(schedule.checkModel)}}</div>
-          <div class="col-sm-3">{{formatAMPM(schedule.date)}}</div>
-          <div class="col-sm-2 text-center">{{schedule.on ? 'ON' : 'OFF'}}</div>
-          <div class="col-sm-2 btn-link text-center" ng-click="remove($index)">x</div>
+          <div class="col-xs-5">{{getDayString(schedule.checkModel)}}</div>
+          <div class="col-xs-3">{{formatAMPM(schedule.date)}}</div>
+          <div class="col-xs-2 text-center">{{schedule.on ? 'ON' : 'OFF'}}</div>
+          <div class="col-xs-2 btn-link text-center" ng-click="remove($index)">x</div>
         </div>
       </div>
     </uib-accordion-group>
