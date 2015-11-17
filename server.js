@@ -2,21 +2,11 @@
 
 var express = require('express'),
     path = require('path'),
-    winston = require('winston'),
     outlets = require('./routes/outlets'),
     port = 8080,
     publicDir = path.dirname(require.resolve('./package.json')) + '/public',
     app = express(),
-    logger;
-
-    winston.loggers.add('standard', {
-      console: {
-        level: 'silly',
-        colorize: true
-      }
-    });
-    
-    logger = winston.loggers.get('standard');
+    logger = require('./lib/logger.js').getLogger();
 
     app.get('/api/outlet/:id', outlets.outletInfo);
 
