@@ -27,7 +27,7 @@ app.controller('schedulerController', function ($scope, $log) {
   
   function clone(obj) {
     var copy, attr;
-    if (null == obj || "object" != typeof obj) return obj;
+    if (null === obj || "object" !== typeof obj) return obj;
        copy = obj.constructor();
     for (attr in obj) {
         if (obj.hasOwnProperty(attr)) copy[attr] = obj[attr];
@@ -63,7 +63,7 @@ app.controller('schedulerController', function ($scope, $log) {
     minutes = minutes < 10 ? '0'+minutes : minutes;
     strTime = hours + ':' + minutes + ' ' + ampm;
     return strTime;
-  }
+  };
 
   function isScheduleEqual(obj1, obj2) {
     return obj1.date.getTime() === obj2.date.getTime() &&
